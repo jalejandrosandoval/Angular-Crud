@@ -3,12 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 //Import Modules
 import { AppRoutingModule } from './app-routing.module';
-
-//Import Components
-import { AppComponent } from './app.component';
 import { EmployeesFormModule } from './Components/Employees/employees-form/employees-form.module';
 import { FooterModule } from './Components/Shared/footer/footer.module';
 import { NavBarModule } from './Components/Shared/nav-bar/nav-bar.module';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestore } from '@angular/fire/compat/firestore'
+
+//Import Components
+import { AppComponent } from './app.component';
+
+//Import Environment
+import { environment } from 'src/environments/environment';
+import { EmployeesService } from './Services/Employees/employees.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +25,12 @@ import { NavBarModule } from './Components/Shared/nav-bar/nav-bar.module';
     AppRoutingModule,
     NavBarModule,
     FooterModule,
-    EmployeesFormModule
+    EmployeesFormModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [],
+  providers:[
+    AngularFirestore
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

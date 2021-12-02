@@ -1,1 +1,39 @@
-<p>list works!</p>
+<br/>
+<div class="d-sm-flex align-items-center justify-content-center mb-4">
+    <h1 class="text-center h3 mb-0 text-gray-800">
+        <i class="fas fa-toolbox"> </i>
+        <b> Employees </b>
+        <br />
+    </h1>
+</div>
+
+<div class="card-body">
+    <div class="row">
+        <div class="col">
+            <table class="table table-hover">
+                <thead class="table-success">
+                    <tr>
+                        <th scope="col d-none d-sm-block">Actions</th>
+                        <th scope="col">FirstName</th>
+                        <th scope="col">LastName</th>
+                        <th score="col">Email</th>
+                        <th scope="col">StartDate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employees of Employees$ | async">
+                        <td>
+                            <button class="btn btn-warning fas fa-edit text-white" title="Edit Employee" type="button"></button>
+                            <button class="btn btn-info fas fa-eye text-white" title="View Employee" type="button"></button>
+                            <button class="btn btn-danger fas fa-trash-alt" title="Delete Employee"></button>
+                        </td>
+                        <td> {{ employees.FirstName }} </td>
+                        <td> {{ employees.LastName }} </td>
+                        <td> {{ employees.Email }} </td>
+                        <td> {{ employees.StartDate }} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

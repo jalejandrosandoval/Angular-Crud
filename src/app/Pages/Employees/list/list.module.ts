@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-//Import Modules
+// Import Modules
 import { ListRoutingModule } from './list-routing.module';
 
-//Import Components
+// Import Components
 import { ListComponent } from './list.component';
 
 @NgModule({
