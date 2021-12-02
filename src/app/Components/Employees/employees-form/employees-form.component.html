@@ -1,1 +1,96 @@
-<p>employees-form works!</p>
+<div class="card shadow mb-4">
+    <div class="card-header" *ngIf="NewEmployee">
+        <h6 class="text-warning">
+            <i class="fas fa-user-plus"> </i> <b> Add New Employee... </b>
+        </h6>
+    </div>
+
+    <div class="card-header" *ngIf="!NewEmployee">
+        <h6 class="text-warning">
+            <i class="fas fa-user-edit"> </i> <b> Edit Employee... </b>
+        </h6>
+    </div>
+
+    <div class="card-body p-0">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="p-3">
+                    <small class="m-0 font-weight-bold text-danger" *ngIf="gEmployeesFormValid">
+                        <i class="fas fa-info-circle"> </i> The Field with (*) are required...
+                    </small>
+                    <br />
+
+                    <form [formGroup]="EmployeesForm" (ngSubmit)="onSave()">
+                        <div class="form-group row">
+
+                            <div class="col-md-6">
+                                <label class="col-md-12 col-form-label" for="Name"> FirstName: </label>
+                                <div class="col-md-12">
+                                    <input name="FirstName" type="text" class="form-control form-control-user"
+                                        placeholder="FirstName..." title="FirstName" formControlName="FirstName" required />
+                                    <small *ngIf="gFirstNameValid" class="text-danger">
+                                        <b>* Field Required: </b> First Name Required!
+                                    </small>
+                                    <br />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="col-md-12 col-form-label" for="Name"> LastName: </label>
+                                <div class="col-md-12">
+                                    <input name="LastName" type="text" class="form-control form-control-user"
+                                        placeholder="LastName..." title="LastName" formControlName="LastName" required />
+                                    <small *ngIf="gLastNameValid" class="text-danger">
+                                        <b>* Field Required: </b> Last Name Required!
+                                    </small>
+                                    <br />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="col-md-12 col-form-label" for="StartDate"> Start Date: </label>
+                                <div class="col-md-12">
+                                    <input name="gStartDateValid" class="form-control form-control-user" type="date"
+                                        formControlName="StartDate" required />
+                                    <small *ngIf="gStartDateValid" class="text-danger">
+                                        <b>* Field Required: </b> Stard Date Required!
+                                    </small>
+                                    <br />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="col-md-12 col-form-label" for="Email"> Email: </label>
+                                <div class="col-md-12">
+                                    <input name="Email" type="email" class="form-control form-control-user"
+                                        placeholder="email@email.com" title="Email" formControlName="Email" required />
+                                    <small *ngIf="gEmailValid" class="text-danger">
+                                        <b>* Field Required: </b> Email Required!
+                                    </small>
+                                    <br />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row pt-3">
+                            <div class="col-lg-4 mb-3 mb-lg-0 offset-lg-4">
+                                <button class="btn btn-danger btn-user btn-block text-white" title="Cancel"
+                                    (click)="onReset()">
+                                    <i class="fas fa-times-circle"></i> Cancel
+                                </button>
+                            </div>
+                            <div class="col-lg-4 mb-3 mb-lg-0">
+                                <button type="submit" class="btn btn-info btn-user btn-block text-white"
+                                    title="Save" [disabled]="EmployeesForm.invalid">
+                                    <i class="fas fa-save"></i> Save
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

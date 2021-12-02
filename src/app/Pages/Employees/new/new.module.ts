@@ -6,6 +6,7 @@ import { NewRoutingModule } from './new-routing.module';
 
 //Import Components
 import { NewComponent } from './new.component';
+import { EmployeesFormModule } from 'src/app/Components/Employees/employees-form/employees-form.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { NewComponent } from './new.component';
   ],
   imports: [
     CommonModule,
+    EmployeesFormModule,
     NewRoutingModule
   ]
 })

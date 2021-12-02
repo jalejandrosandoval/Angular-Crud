@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { IEmployee } from 'src/app/Interfaces/Employee.interface';
 import { EmployeesService } from 'src/app/Services/Employees/employees.service';
 
@@ -10,15 +11,39 @@ import { EmployeesService } from 'src/app/Services/Employees/employees.service';
 export class ListComponent implements OnInit {
 
   // Variables Declaration
-  private _Employees: IEmployee[] =[];
   public Employees$ = this._serviceEmployees.employees$;
 
-  constructor(private _serviceEmployees: EmployeesService) { }
+  private navigatiosExtras: NavigationExtras = {
+    state:{
+      value: null
+    }
+  }
+
+  constructor(
+    private _serviceEmployees: EmployeesService,
+    private _router: Router) { }
 
   ngOnInit(): void {
     this.Employees$.subscribe(elem =>{
       console.log(elem);
     })
+  }
+
+  // Method for Edit Employee
+  public onEdit(_Employee: IEmployee){
+    this.navigatiosExtras.state = _Employee;
+    this._router.navigate(['edit'], this.navigatiosExtras);
+  }
+
+  // Method for Details Employee
+  public onDetails(_Employee: IEmployee){
+    this.navigatiosExtras.state = _Employee;
+    this._router.navigate(['details'], this.navigatiosExtras)
+  }
+
+  // Method for Delete Employee
+  public onDelete(_Id: any){
+    
   }
 
 }
