@@ -72,14 +72,18 @@ npm i boostrap jquery @popperjs/core --save
 Para instalar fontawesome basta con la siguiente linea de comando:
 
 ```bash
-npm install --save @fortawesome/fontawesome-free
+npm install --save @fortawesome/fontawesome-free --save
+```
+
+```bash
+npm install @fortawesome/angular-fontawesome --save 
 ```
 
 * #### Instalación de NGX-TOASTR -> Notificaciones
 Para instalar Toastr, se requiere de la siguiente linea de comando:
 
 ```bash
-npm i ngx-toastr --save
+npm install ngx-toastr --save
 ```
 Junto con la instalación del siguiente paquete, el cual ayuda a la funcionalidad del TOASTR.
 
