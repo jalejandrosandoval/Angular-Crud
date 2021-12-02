@@ -1,26 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+//Import Modules
 import { AppRoutingModule } from './app-routing.module';
+
+//Import Components
 import { AppComponent } from './app.component';
-import { FooterComponent } from './Components/Shared/footer/footer.component';
-import { EditComponent } from './Pages/Employees/edit/edit.component';
-import { ListComponent } from './Pages/Employees/list/list.component';
-import { NewComponent } from './Pages/Employees/new/new.component';
-import { EmployeesFormComponent } from './Components/Employees/employees-form/employees-form.component';
+import { EmployeesFormModule } from './Components/Employees/employees-form/employees-form.module';
+import { FooterModule } from './Components/Shared/footer/footer.module';
+import { NavBarModule } from './Components/Shared/nav-bar/nav-bar.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
-    EditComponent,
-    ListComponent,
-    NewComponent,
-    EmployeesFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NavBarModule,
+    FooterModule,
+    EmployeesFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]
