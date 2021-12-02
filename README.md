@@ -11,8 +11,27 @@ Carpeta donde se encuentra el proyecto de clase de Angular.
 ## Estructura Principal de Archivos
 
 ```bash
-└─ Angular
-   └─ Proyecto1Clase12112021 => Proyecto Básico en Angular (Promesas, Servicios, Pipes,Components, Interfaces etc.).
+└─ Angular-Crud
+   ├─ e2e
+   ├─ node_modules 
+   └─ src => Carpeta Principal
+      └─ app
+         ├─ Components
+         │  ├─ Employees
+         │  │  └─ employees-form
+         │  └─ Shared
+         │     ├─ footer
+         │     └─ nav-bar
+         ├─ Interfaces
+         ├─ Pages
+         │  └─ Employees
+         │     ├─ details
+         │     ├─ edit
+         │     ├─ list
+         │     └─ new
+         └─ Services
+            └─ Employees
+
 ```
 
 ## Requisitos Previos Para Angular
@@ -60,6 +79,13 @@ npm i
 ### Instalar Otras Dependencias
 
 Si se desea realizar desde 0 con la instalación del proyecto desde 0, se deben instalar uno a uno cada uno de los modules a utilizar; en este caso, se utilizará boostrap y algunos otros paquetes; Sin embargo, hay que tener en cuenta que al instalar cada dependencia se debe hacer su respectiva importación y/o llamado en el Archivo "Angular.JSON".
+
+* #### Instalación de FireBase -> BD NSQL
+Para instalar firebase solamente se debe ejecutar el siguiente comando:
+
+```bash
+npm i @angular/fire --save
+```
 
 * #### Instalación de Boostrap -> Estilos
 Para instalar boostrap se requieren las dependencias de JQUERY y de PopperJS:
