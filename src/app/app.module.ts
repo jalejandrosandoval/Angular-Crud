@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 //Import Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +16,6 @@ import { AppComponent } from './app.component';
 
 //Import Environment
 import { environment } from 'src/environments/environment';
-import { EmployeesService } from './Services/Employees/employees.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,13 @@ import { EmployeesService } from './Services/Employees/employees.service';
     NavBarModule,
     FooterModule,
     EmployeesFormModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      closeButton: true,
+      positionClass: "toast-top-right",
+      preventDuplicates: true
+    })
   ],
   providers:[
     AngularFirestore
