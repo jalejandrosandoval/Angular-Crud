@@ -14,6 +14,7 @@
                 <thead class="table-success">
                     <tr>
                         <th scope="col d-none d-sm-block">Actions</th>
+                        <th scope="col">Id</th>
                         <th scope="col">FirstName</th>
                         <th scope="col">LastName</th>
                         <th score="col">Email</th>
@@ -27,6 +28,7 @@
                             <button class="btn btn-info fas fa-eye text-white" title="View Employee" type="button" (click)="onDetails(employees)"></button>
                             <button class="btn btn-danger fas fa-trash-alt" title="Delete Employee" type="button" (click)="onDelete(employees.Id)"></button>
                         </td>
+                        <td> {{ employees.Id }} </td>
                         <td> {{ employees.FirstName }} </td>
                         <td> {{ employees.LastName }} </td>
                         <td> {{ employees.Email }} </td>

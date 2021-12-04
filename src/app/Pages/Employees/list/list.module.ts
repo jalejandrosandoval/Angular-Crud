@@ -13,7 +13,7 @@ import { ListComponent } from './list.component';
   ],
   imports: [
     CommonModule,
-    ListRoutingModule
+    ListRoutingModule,
   ]
 })
 export class ListModule { }
