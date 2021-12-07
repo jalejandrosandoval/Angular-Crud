@@ -35,9 +35,9 @@ export class EmployeesFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (Object.entries(this._Employee).length === 0) 
+    if (Object.entries(this._Employee).length === 0)
       this._router.navigate(['/new']);
-    else 
+    else
       this.EmployeesForm.patchValue(this._Employee);
   }
 
@@ -57,7 +57,7 @@ export class EmployeesFormComponent implements OnInit {
           Validators.pattern(this.isEmail)
         ]
       }],
-      StartDate: ['', {
+      StartDate: [new Date(), {
         Validators: [Validators.required]
       }],
     });
@@ -103,18 +103,18 @@ export class EmployeesFormComponent implements OnInit {
 
   // Save the data of Form
   public async onSave() {
-    try{
-      if(this._Employee.Id == null){
+    try {
+      if (this._Employee.Id == null) {
         this._Employee = this.EmployeesForm.value;
         await this._employeeService.add_editEmployees(this._Employee);
         this._toastr.success('Add a new employe!', 'Employee:');
-      }else{
+      } else {
         this.EmployeesForm.value.Id = this._Employee.Id;
         await this._employeeService.add_editEmployees(this.EmployeesForm.value);
         this._toastr.success('The Employe was successfully edited!', 'Employee:');
       }
       this._router.navigate(['list']);
-    }catch(_error){
+    } catch (_error) {
       this._toastr.error(`An error has occurred: ${_error}`, "Error");
     }
   }

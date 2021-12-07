@@ -12,7 +12,7 @@ export class EditComponent implements OnInit {
     FirstName: '',
     LastName: '',
     Email: '',
-    StartDate: ''
+    StartDate: new Date()
   }
 
   constructor() { }

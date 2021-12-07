@@ -27,7 +27,8 @@
                                 <label class="col-md-12 col-form-label" for="Name"> FirstName: </label>
                                 <div class="col-md-12">
                                     <input name="FirstName" type="text" class="form-control form-control-user"
-                                        placeholder="FirstName..." title="FirstName" formControlName="FirstName" required />
+                                        placeholder="FirstName..." title="FirstName" formControlName="FirstName"
+                                        required />
                                     <small *ngIf="gFirstNameValid" class="text-danger">
                                         <b>* Field Required: </b> First Name Required!
                                     </small>
@@ -39,7 +40,8 @@
                                 <label class="col-md-12 col-form-label" for="Name"> LastName: </label>
                                 <div class="col-md-12">
                                     <input name="LastName" type="text" class="form-control form-control-user"
-                                        placeholder="LastName..." title="LastName" formControlName="LastName" required />
+                                        placeholder="LastName..." title="LastName" formControlName="LastName"
+                                        required />
                                     <small *ngIf="gLastNameValid" class="text-danger">
                                         <b>* Field Required: </b> Last Name Required!
                                     </small>
@@ -81,8 +83,8 @@
                                 </button>
                             </div>
                             <div class="col-lg-4 mb-3 mb-lg-0">
-                                <button type="submit" class="btn btn-info btn-user btn-block text-white"
-                                    title="Save" [disabled]="EmployeesForm.invalid">
+                                <button type="submit" class="btn btn-info btn-user btn-block text-white" title="Save"
+                                    [disabled]="EmployeesForm.invalid">
                                     <i class="fas fa-save"></i> Save
                                 </button>
                             </div>
