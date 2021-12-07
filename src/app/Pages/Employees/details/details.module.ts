@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Import Modules
 import { DetailsRoutingModule } from './details-routing.module';
@@ -13,6 +14,8 @@ import { DetailsComponent } from '../details/details.component';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
     DetailsRoutingModule
   ]
 })

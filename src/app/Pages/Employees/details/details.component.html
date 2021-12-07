@@ -1,1 +1,75 @@
-<p>details works!</p>
+<br/>
+<div class="d-sm-flex align-items-center justify-content-center mb-4">
+    <h1 class="text-center h3 mb-0 text-gray-800">
+        <i class="fas fa-toolbox"> </i>
+        <b> Employees </b>
+        <br />
+    </h1>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header">
+        <h6 class="text-warning">
+            <i class="fas fa-user-plus"> </i> <b> Details Employee... </b>
+        </h6>
+    </div>
+
+    <div class="card-body p-0">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="p-3">
+                    <form [formGroup]="EmployeesDetailsForm">
+                        <div class="form-group row">
+
+                            <div class="col-md-6">
+                                <label class="col-md-12 col-form-label" for="Name"> FirstName: </label>
+                                <div class="col-md-12">
+                                    <input name="FirstName" type="text" class="form-control form-control-user"
+                                        placeholder="FirstName..." title="FirstName" formControlName="FirstName"
+                                        required/>
+                                    <br />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="col-md-12 col-form-label" for="Name"> LastName: </label>
+                                <div class="col-md-12">
+                                    <input name="LastName" type="text" class="form-control form-control-user"
+                                        placeholder="LastName..." title="LastName" formControlName="LastName"
+                                        required/>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="col-md-12 col-form-label" for="StartDate"> Start Date: </label>
+                                <div class="col-md-12">
+                                    <input name="gStartDateValid" class="form-control form-control-user" type="date"
+                                        formControlName="StartDate" required/>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="col-md-12 col-form-label" for="Email"> Email: </label>
+                                <div class="col-md-12">
+                                    <input name="Email" type="email" class="form-control form-control-user"
+                                        placeholder="email@email.com" title="Email" formControlName="Email" required />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row pt-3">
+                            <div class="col-lg-4 mb-3 mb-lg-0 offset-lg-8">
+                                <button class="btn btn-warning btn-user btn-block text-white" title="Return..."
+                                    (click)="onReturn()">
+                                    <i class="fas fa-arrow-circle-left"></i> Return
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
